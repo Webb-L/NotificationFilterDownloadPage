@@ -1,0 +1,279 @@
+* {
+    scrollbar-color: transparent transparent;
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+body {
+    background: url("./img/background.jpg");
+    background-size: cover;
+    backdrop-filter: blur(100px);
+}
+body::after {
+    content: '';
+    display: block;
+    width: 100vw;
+    height: 100vh;
+
+    filter: blur(6px);
+    position: absolute;
+    z-index: 1;
+}
+
+blockquote, body, button, dd, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, hr, input, legend, li, ol, p, pre, td, textarea, th, ul {
+    margin: 0;
+    padding: 0
+}
+
+body, button, input, select, textarea {
+
+}
+
+
+address, cite, dfn, em, var {
+    font-style: normal
+}
+
+code, kbd, pre, samp {
+    font-family: courier new, courier, monospace
+}
+
+small {
+    font-size: 12px
+}
+
+ol, ul {
+    list-style: none
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+sup {
+    vertical-align: text-top
+}
+
+sub {
+    vertical-align: text-bottom
+}
+
+legend {
+    color: #000
+}
+
+fieldset, img {
+    border: 0
+}
+
+button, input, select, textarea {
+    font-size: 100%
+}
+
+button {
+    border-radius: 0
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+nav {
+    padding: 0 32px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+nav #logo {
+    display: flex;
+    align-items: center;
+}
+
+nav #logo img {
+    margin-right: 8px;
+}
+
+nav #toolbar {
+    flex: 1;
+    display: flex;
+    justify-content: end;
+}
+
+nav li {
+    margin: 0 16px;
+}
+
+main {
+    padding: 0 16px;
+    display: grid;
+    height: calc(100vh - 64px);
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#download-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#download-buttons {
+    margin-top: 16px;
+}
+
+#download-buttons button {
+    padding: 10px 13px;
+    border-radius: 10px;
+    line-height: 100%;
+    border: 3px solid #6750a4;
+    background: transparent;
+}
+
+#download-buttons button.active {
+    color: white;
+    background: #6750a4;
+}
+
+
+#introduce-container {
+    display: grid;
+    grid-template-columns: 60px 1fr 60px;
+    position: relative;
+    align-items: center;
+    justify-items: center;
+}
+
+#introduce-container #prev,
+#introduce-container #next {
+    width: 45px;
+    height: 45px;
+    border-radius: 100px;
+    margin: 0 10px;
+    border: 1px;
+    font-size: 32px;
+    text-align: center;
+    line-height: 45px;
+}
+
+#introduce-container #carouselContainer {
+    display: flex;
+    width: 390px;
+    overflow: auto;
+    border-radius: 16px;
+}
+
+#introduce-container #carouselContainer img,
+#introduce-container #carouselContainer div {
+    width: 392px;
+    height: 833px;
+    display: block;
+}
+
+#carouselContainer div {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#carouselContainer div button {
+    padding: 10px 13px;
+    border-radius: 10px;
+    line-height: 100%;
+    border: 3px solid #6750a4;
+    color: white;
+    width: 100%;
+    margin: 8px 0;
+    background: #6750a4;
+}
+
+#introduce-container ul {
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    display: flex;
+    transform: translateX(-50%);
+}
+
+#introduce-container li {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border: 3px solid #6750a4;
+    margin: 0 10px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 10px;
+    color: #6750a4;
+}
+
+#introduce-container li.active {
+    background: #6750a4;
+    color: white;
+}
+
+#introduce {
+    width: 50%;
+}
+
+@media screen and (max-width: 800px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    #introduce-container {
+        margin-top: 16px;
+    }
+
+    #introduce {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 458px) {
+    #introduce-container {
+        grid-template-columns: 40px 1fr 40px;
+    }
+
+    #introduce-container #prev,
+    #introduce-container #next {
+        width: 25px;
+        height: 25px;
+        font-size: 12px;
+        line-height: 25px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    nav {
+        padding: 0 8px;
+    }
+
+    main {
+        padding: 0;
+    }
+
+    #introduce-container {
+        grid-template-columns: 1fr;
+    }
+
+    #logo h5,
+    #introduce-container ul,
+    #introduce-container #prev,
+    #introduce-container #next {
+        display: none;
+    }
+
+    #introduce {
+        width: 98%;
+    }
+}
