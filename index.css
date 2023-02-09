@@ -13,6 +13,7 @@ body {
     background-size: cover;
     backdrop-filter: blur(100px);
 }
+
 body::after {
     content: '';
     display: block;
@@ -190,7 +191,7 @@ main {
     line-height: 100%;
     border: 3px solid #6750a4;
     color: white;
-    width: 100%;
+    width: 80%;
     margin: 8px 0;
     background: #6750a4;
 }
@@ -228,6 +229,7 @@ main {
 @media screen and (max-width: 800px) {
     main {
         grid-template-columns: 1fr;
+        padding: 0;
     }
 
     #introduce-container {
@@ -241,15 +243,15 @@ main {
 
 @media screen and (max-width: 458px) {
     #introduce-container {
-        grid-template-columns: 40px 1fr 40px;
+        grid-template-columns: 60px 1fr 60px;
     }
 
     #introduce-container #prev,
     #introduce-container #next {
-        width: 25px;
-        height: 25px;
-        font-size: 12px;
-        line-height: 25px;
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+        line-height: 35px;
     }
 }
 
@@ -262,18 +264,27 @@ main {
         padding: 0;
     }
 
-    #introduce-container {
-        grid-template-columns: 1fr;
+
+    #introduce-container #carouselContainer {
+        display: flex;
+        width: 253px;
+        overflow: auto;
+        border-radius: 16px;
+    }
+
+    #introduce-container #carouselContainer img,
+    #introduce-container #carouselContainer div {
+        width: 255px;
+        height: 540px;
+        display: block;
     }
 
     #logo h5,
-    #introduce-container ul,
-    #introduce-container #prev,
-    #introduce-container #next {
+    #introduce-container ul {
         display: none;
     }
 
     #introduce {
-        width: 98%;
+        width: 90%;
     }
 }

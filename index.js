@@ -185,6 +185,7 @@ function initView() {
     carouselIndex.appendChild(li)
 
     const downloadContainer = document.createElement("div")
+    downloadContainer.style.backgroundColor = '#eaddff'
     const downloadButtons = document.createElement("div")
 
     carousel.downloads.forEach(button => {
